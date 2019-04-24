@@ -1,0 +1,7 @@
+# Google DNS
+nameserver 8.8.8.8
+# China DNS
+nameserver 114.114.114.114
+# OpenDns Servers
+nameserver 208.67.222.222
+nameserver 208.67.220.220

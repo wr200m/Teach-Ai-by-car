@@ -1,0 +1,26 @@
+#!/bin/sh
+if [ `whoami` != "root" ]
+then
+    echo "you must sudo as root"
+    exit
+fi
+if [ "$1" = "homewifi" -o "$1" = "router" ]
+then
+    echo "switching to $1"
+    sleep 2
+    SRCDIR=/home/pi/thinkland/ThinklandRPiCar/RPiconfig
+    DIR=/home/pi/thinkland/configuration
+    rm -rf $DIR
+    cp -r -p $SRCDIR $DIR
+    cd $DIR; $DIR/ch
+    cp -p $DIR/etc/rc.local /etc/
+    cp -p $DIR/etc/resolv.conf.head /etc/resolv.conf.head
+    cp -p $DIR/etc/network/interfaces.$1 /etc/network/interfaces
+    cp -p $DIR/etc/dhcpcd.conf.$1 /etc/dhcpcd.conf
+    cp -p $DIR/etc/systemd/system/mjpeg-streamer.service /etc/systemd/system/
+    cp -p $DIR/etc/systemd/system/jupyter.service /etc/systemd/system/
+    cp -p $DIR/jupyter/* /home/pi/.jupyter/
+    reboot
+else
+    echo "one argument only: homewifi or router"
+fi

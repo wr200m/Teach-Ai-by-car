@@ -1,0 +1,15 @@
+[Unit]
+Description=Jupyter Notebook
+After=network.target
+[Service]
+Type=simple
+PIDFile=/run/jupyter.pid 
+ExecStart=/usr/local/bin/jupyter-notebook --config=/home/pi/.jupyter/jupyter_notebook_config.py 
+User=pi
+Group=pi
+WorkingDirectory=/home/pi/thinkland/ThinklandRPiCar/jupyter 
+Restart=always
+RestartSec=2 
+[Install]
+WantedBy=multi-user.target
+

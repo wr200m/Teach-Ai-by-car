@@ -187,7 +187,7 @@ class Car:
             self.__pwm_left_speed.ChangeDutyCycle(0)
             self.__pwm_right_speed.ChangeDutyCycle(0)
 
-    def __led_light(r, g, b):
+    def __led_light(self, r, g, b):
         """
          __led_light
 
@@ -278,6 +278,7 @@ class Car:
 
         self.__pwm_left_speed.stop()
         self.__pwm_right_speed.stop()
+        GPIO.cleanup()
 
 
     def run_forward(self, speed=50, duration=0.0):

@@ -39,6 +39,7 @@
 chown -R root .
 chgrp -R root .
 chown pi ./update_thinkland_car_info
+chgrp pi ./update_thinkland_car_info
 chmod u+x ./update_thinkland_car_info
 chmod u+x ./ch
 chmod u+x ./switch-network-mode

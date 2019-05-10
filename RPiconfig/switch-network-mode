@@ -21,7 +21,7 @@ then
     cp -p $DIR/etc/systemd/system/jupyter.service /etc/systemd/system/
     cp -p $DIR/etc/systemd/system/bluetooth_control.service /etc/systemd/system/
     cp -p $DIR/jupyter/* /home/pi/.jupyter/
-    crontab $DIR/crontab.pi
+    crontab -u pi $DIR/crontab.pi
     reboot
 else
     echo "one argument only: homewifi or router"

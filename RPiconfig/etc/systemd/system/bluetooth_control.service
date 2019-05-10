@@ -1,0 +1,15 @@
+[Unit]
+Description=Bluetooth Car Control Service
+After=network.target
+ 
+[Service]
+ExecStart=/home/pi/SmartCar/bluetooth_control
+WorkingDirectory=/home/pi/SmartCar
+User=pi
+Group=pi
+Restart=always
+RestartSec=1
+ 
+[Install]
+WantedBy=multi-user.target
+

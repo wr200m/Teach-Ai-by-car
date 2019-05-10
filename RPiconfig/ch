@@ -27,7 +27,8 @@
 #drwxr-xr-x 2 root root 4096 Apr 23 19:18 system
 #
 #./etc/systemd/system:
-#total 8
+#total 12
+#-rw-r--r-- 1 root root 248 May 10 00:13 bluetooth_control.service
 #-rw-r--r-- 1 root root 331 Apr 23 19:18 jupyter.service
 #-rw-r--r-- 1 root root 310 Apr 23 16:08 mjpeg-streamer.service
 #

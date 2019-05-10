@@ -19,8 +19,8 @@ fi
 
 iptables-restore < /etc/iptables.ipv4.nat
 
-cd /home/pi/SmartCar/
-./bluetooth_control  &
+#cd /home/pi/SmartCar/
+#./bluetooth_control  &
 
 
 

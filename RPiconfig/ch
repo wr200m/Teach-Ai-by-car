@@ -38,6 +38,7 @@
 #-rw------- 1 pi pi   103 Apr 24 19:05 jupyter_notebook_config.json
 chown -R root .
 chgrp -R root .
+chown pi ./update_thinkland_car_info
 chmod u+x ./update_thinkland_car_info
 chmod u+x ./ch
 chmod u+x ./switch-network-mode

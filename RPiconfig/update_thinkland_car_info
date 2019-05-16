@@ -11,9 +11,12 @@ echo $internal_ip
 update_date=`date +%Y-%m-%dT%H:%M:%S -u`
 echo $update_date
 
-JSON_FMT='{"teamviewer_id":"%s", "internal_ip":"%s", "update_date":"%s"}'
-data=`printf "$JSON_FMT" "$teamviewer_id" "$internal_ip" "$update_date"`
+id=`hostname`
+echo $id
+
+JSON_FMT='{"id":"%s", "teamviewer_id":"%s", "internal_ip":"%s", "update_date":"%s"}'
+data=`printf "$JSON_FMT" "$id" "$teamviewer_id" "$internal_ip" "$update_date"`
 echo $data
 
-curl -d "$(printf "$JSON_FMT" "$teamviewer_id" "$internal_ip" "$update_date")" -H "Content-Type: application/json" -X POST https://school.thinklandai.com/carconfig/`hostname`
+curl -d "$(printf "$JSON_FMT" "$id" "$teamviewer_id" "$internal_ip" "$update_date")" -H "Content-Type: application/json" -X POST https://school.thinklandai.com/carconfig/$id
 echo
